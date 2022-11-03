@@ -19,6 +19,12 @@
     </style>
 </head>
 <body>
+{% if user.is_authenticated %}
+<h1>Welcome, {{ user.username }}</h1>
+{% else %}
+<h1>Hello DUDE</h1>
+{% endif %}
+
 <div class="main_box">
 
 <p>adgperg[oirte[goijer[ogjer[oghnrtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgh</p>
