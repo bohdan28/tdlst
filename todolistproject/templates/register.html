@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    <style>
+        body{
+        text-align: center;
+        background-color: #010101;
+        }
+        h1{
+        color: green;
+        }
+        .main_box{
+        padding: 50 px;
+        border-radius: 10 px;
+        background-color: grey
+        }
+        p{
+        color:white;
+        }
+    </style>
+</head>
+<body>
+<h1>Sign up Below</h1>
+
+{% for message in messages%}
+<h5 style="color:red;">{{ message }}</h5>
+{% endfor %}
+<form method="post" action="register">
+    {%  csrf_token  %}
+    <p>Username:</p>
+    <input type="text" name="username">
+    <p>Email:</p>
+    <input type="email" name="email">
+    <p>Password:</p>
+    <input type="password" name="password">
+    <p>Repeat password:</p>
+    <input type="password" name="password2"><br>
+
+    <input type="submit" style="margin: 10px">
+</form>
+</body>
+</html>
