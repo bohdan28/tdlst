@@ -21,8 +21,12 @@
 <body>
 {% if user.is_authenticated %}
 <h1>Welcome, {{ user.username }}</h1>
+<h2>Please <a href="./login">LogOut</a>.</h2>
+
+
 {% else %}
 <h1>Hello DUDE</h1>
+<h2>Please <a href="./login">LogIn</a>.</h2>
 {% endif %}
 
 <div class="main_box">
