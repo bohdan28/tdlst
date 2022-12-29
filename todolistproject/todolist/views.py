@@ -23,8 +23,8 @@ def register(request):
                 messages.info(request, 'Username already used')
                 return redirect('register')
             else:
-                User.objects.create_user(username=username, email=email, password=password)
-                User.save()
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save()
                 return redirect('login')
         else:
             messages.info(request, 'Passwords do not match')
@@ -46,3 +46,8 @@ def login(request):
             messages.info(request, 'Credentials Invalid')
             return redirect('login')
     return render(request, 'login.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
